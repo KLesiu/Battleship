@@ -1,18 +1,22 @@
+const Gameboard=require('../gameboard/gameboard')
 class Ship{
-    constructor(length,hits,killed,coordinateX,coordinateY){
+    constructor(length,killed,coordinateX,coordinateY,position){
         this.length=length
-        this.hits=hits
+        this.hits=[]
         this.killed=killed
         this.coordinateX=coordinateX
         this.coordinateY=coordinateY
         this.position=position
         }
     hit(){
-        this.hits++
-        return this.hits
+        this.hits.push({
+            coordinateX:this.coordinateX,
+            coordinateY:this.coordinateY
+        })
+        return this.hits.length
     }
     isSunk(){
-        if(this.length-this.hits===0){
+        if(this.length-this.hits.length===0){
             this.killed=true
             return true
         }

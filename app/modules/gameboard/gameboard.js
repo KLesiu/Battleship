@@ -7,7 +7,7 @@ class Gameboard{
         this.sunkedShips=0
     }
     addShip(coordinateX,coordinateY,lengthShip,position){
-        let ship=new Ship(lengthShip,0,false,coordinateX,coordinateY,position)
+        const ship=new Ship(lengthShip,false,coordinateX,coordinateY,position)
         this.ships.push(ship)
         return this.ships
     }
@@ -43,5 +43,10 @@ class Gameboard{
 
     
 }
+const gameboard=new Gameboard
+gameboard.addShip(2,1,2,'vertical')
+gameboard.receiveAttack(2,1)
+gameboard.receiveAttack(2,1)
+console.log(gameboard)
 
 module.exports=Gameboard
