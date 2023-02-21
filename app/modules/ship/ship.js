@@ -1,12 +1,12 @@
-const Gameboard=require('../gameboard/gameboard')
 class Ship{
-    constructor(length,killed,coordinateX,coordinateY,position){
+    constructor(length,coordinateX,coordinateY,position){
         this.length=length
         this.hits=[]
-        this.killed=killed
+        this.killed=false
         this.coordinateX=coordinateX
         this.coordinateY=coordinateY
         this.position=position
+        this.coordinates=[]
         }
     hit(){
         this.hits.push({
@@ -26,4 +26,4 @@ class Ship{
 
 
 
-module.exports=Ship
+export {Ship}
