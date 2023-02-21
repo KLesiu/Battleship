@@ -52,17 +52,19 @@ ship.coordinates.push({x:coordinateX,y:coordinateY},{x:coordinateX,y:coordinateY
     }
     receiveAttack(coordinateX,coordinateY){
         for(let i=0;i<this.ships.length;i++){
-            
-            if(this.ships[i].coordinateX===coordinateX&&this.ships[i].coordinateY===coordinateY){
-                this.ships[i].hit()
-                
-                if(this.ships[i].isSunk()){
+            let current=this.ships[i].coordinates
+            for(let j=0;j<current.length;j++){
+                if(current[j].x===coordinateX&&current[j].y===coordinateY){
+                    this.ships[i].hit()
+                    if(this.ships[i].isSunk()){
                     
-                    this.sunkedShips++
-                   return this.endGame()
-                } 
-                return this.ships[i]
+                                this.sunkedShips++
+                               return this.endGame()
+                            } 
+                            return this.ships[i].hits
+                }
             }
+          
                 
                 
             
@@ -82,9 +84,6 @@ ship.coordinates.push({x:coordinateX,y:coordinateY},{x:coordinateX,y:coordinateY
 
     
 }
-const gameboard=new Gameboard
-gameboard.addShip(1,1,3,'vertical')
-console.log(gameboard.addShip(0,3,1,'horizontal'))
 
 
 export {Gameboard}
