@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+}
+header {
+  align-items: center;
+  display: flex;
+  height: 20vh;
+  font-size: 2em;
+  justify-content: center;
+  width: 100vw;
+}
+main {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  padding: 10px;
+  width: 100vw;
+}
+#yourName {
+  font-size: 1em;
+}
+#player,
+#ai {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 50vw;
+}
+.div-input {
+  align-items: center;
+  display: flex;
+  height: 20%;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  width: 100%;
+}
+.div-input span {
+  text-align: center;
+  width: 100%;
+}
+.div-input input {
+  color: black;
+  height: 5vh;
+  width: 5vw;
+}
+.div-input button {
+  background-color: grey;
+  cursor: pointer;
+  height: 5vh;
+  width: 4vw;
+}
+.div-input button:hover {
+  background-color: rgb(20, 60, 170);
+}
+
+#gameBoardPlayer,
+#gameBoardAI {
+  background-color: white;
+
+  height: 51vh;
+  margin-top: 5vh;
+  width: 40vw;
+}
+#divHolder,
+#divAIHolder {
+  color: black;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+#divHolder div,
+#divAIHolder div {
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
+  height: 10%;
+
+  width: 10%;
+}
+#ai h2 {
+  font-size: 2em;
+}
+#ai span,
+#player span {
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
+}
+.preLoad {
+  align-items: center;
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  width: 100vw;
+}
+.preLoad div {
+  border: 1px solid white;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 60%;
+  justify-content: center;
+  width: 40%;
+}
+.preLoad label {
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
+}
+.preLoad input {
+  color: black;
+  font-size: 2em;
+  height: 5vh;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+.submitMyName {
+  background-color: grey;
+  border-radius: 5px;
+  cursor: pointer;
+  color: black;
+  height: 5vh;
+  margin-top: 20px;
+  width: 10vw;
+}
+.submitMyName:hover {
+  background-color: rgb(20, 75, 148);
+}
+.hidden {
+  display: none;
+}
