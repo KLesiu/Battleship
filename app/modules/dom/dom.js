@@ -25,12 +25,12 @@ const buildDom=()=>{
     const divSectionPlayerMain=document.createElement("div")
     divSectionPlayerMain.classList.add("div-input")
     divSectionPlayerMain.innerHTML=`<span><h2 id="yourName">Name</h2></span>
-    <span><h3>Type coordinates for<h4 class="shipWidth">big ship</h4></h3></span>
-    <h3>X</h3>
+    <span><h3 class="infoPlayer">Type coordinates for<h4 class="shipWidth">big ship</h4></h3></span>
+    <h3 class="coordXInfo">X</h3>
     <input id="coordinateX" type="number" />
-    <h3>Y</h3>
+    <h3 class="coordYInfo">Y</h3>
     <input id="coordinateY" type="number" />
-    <h4 style="width:70%;text-align:center;">Position(vertical,horizontal)</h4>
+    <h4 class="positionInfoPlayer" style="width:70%;text-align:center;">Position(vertical,horizontal)</h4>
     <input style="width:30%;" id="position" type="text" />
     <button id="placeShip">Place ship</button>
     <span>Score:<h2 class="playerScore">0</h2></span>`
