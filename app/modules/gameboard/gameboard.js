@@ -1,4 +1,6 @@
 import {Ship} from "../ship/ship.js"
+import { player } from "../startGamePlayer/startPlayer.js"
+let stop=false
 class Gameboard{
     constructor(){
         this.ships=[]
@@ -7,7 +9,8 @@ class Gameboard{
     }
     addShip(coordinateX,coordinateY,lengthShip,position){
         const ship=new Ship(lengthShip,coordinateX,coordinateY,position)
-        
+        coordinateX=+coordinateX
+        coordinateY=+coordinateY
         
         if(ship.length===1){
             ship.coordinates.push({x:coordinateX, y:coordinateY})
@@ -66,6 +69,30 @@ ship.coordinates.push({x:coordinateX,y:coordinateY},{x:coordinateX,y:coordinateY
 
 
         this.ships.push(ship)
+        if(stop===true) return 
+        const divs=document.getElementsByClassName("gameBoardDiv")
+        
+            let positionMid;
+            if(coordinateY===0) positionMid=coordinateX
+            else {
+                positionMid=10*coordinateY+coordinateX
+            }
+            divs[positionMid].style="background-color:green;"
+            if(position==="horizontal"){
+             if(ship.length===2)  divs[positionMid+1].style="background-color:green;"
+               else if(ship.length===3){
+                divs[positionMid+1].style="background-color:green;"
+                divs[positionMid+2].style="background-color:green;"
+               } 
+            }else if(position==="vertical"){
+                if(ship.length===2) divs[positionMid+10].style="background-color:green;"
+                else if(ship.length===3){
+                    divs[positionMid+10].style="background-color:green;"
+                    divs[positionMid+20].style="background-color:green;"
+                } 
+            }
+            if(player.gameboard.ships.length===9) stop=true
+            
        
         return ship
     }

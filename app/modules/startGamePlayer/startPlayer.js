@@ -49,4 +49,4 @@ const generateGameBoard=(user)=>{
     
 
 }
-export {startGamePlayer,player}
+export {startGamePlayer,player,generateGameBoard}

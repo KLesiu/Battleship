@@ -25,7 +25,7 @@ const buildDom=()=>{
     const divSectionPlayerMain=document.createElement("div")
     divSectionPlayerMain.classList.add("div-input")
     divSectionPlayerMain.innerHTML=`<span><h2 id="yourName">Name</h2></span>
-    <span><h3>Type coordinates for big ship</h3></span>
+    <span><h3>Type coordinates for<h4 class="shipWidth">big ship</h4></h3></span>
     <h3>X</h3>
     <input id="coordinateX" type="number" />
     <h3>Y</h3>
