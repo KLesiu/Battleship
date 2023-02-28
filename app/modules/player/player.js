@@ -1,19 +1,19 @@
 import {Gameboard} from '../gameboard/gameboard.js'
 class Player{
-    constructor(name){
+    constructor(){
         this.shoots=[]
         this.gameboard=new Gameboard
-        this.name=name
+       
         this.score=this.gameboard.sunkedShips
     }
     welcome(){
-        //TODO:
-        //Type name
-        //Show name above the gameboard
-        //Show score next to name
+        const inputStart=document.querySelector(".preLoad div input")
+        const yourName=document.querySelector("#yourName")
+        yourName.innerHTML=inputStart.value
     }
     addShips(coordinateX,coordinateY,lengthShip,position){
         this.gameboard.addShip(coordinateX,coordinateY,lengthShip,position)
+        return this.gameboard
     }
     shoot(coordinateX,coordinateY){
         let attack={x:coordinateX,y:coordinateY}

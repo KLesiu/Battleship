@@ -104,4 +104,5 @@ ship.coordinates.push({x:coordinateX,y:coordinateY},{x:coordinateX,y:coordinateY
     
 }
 
+
 export {Gameboard}
