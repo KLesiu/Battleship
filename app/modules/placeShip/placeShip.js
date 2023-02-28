@@ -1,7 +1,9 @@
 import { player } from "../startGamePlayer/startPlayer.js"
 import { generateGameBoard } from "../startGamePlayer/startPlayer.js"
 import { generateAI } from "../generateAI/generateAI.js"
-// FIX BUGS
+import { battleLoop } from "../battleLoop/battleLoop.js"
+
+
 let stop=false
 const placeShip=()=>{
     
@@ -32,8 +34,7 @@ const placeShip=()=>{
            player.gameboard.addShip(coordinateX,coordinateY,leng,position)
            if(player.gameboard.ships.length>=2) shipWidth.innerHTML="medium ship"
            if(player.gameboard.ships.length>=5)shipWidth.innerHTML="small ship"
-           console.log(player)
-           console.log(position)
+           
         }
         else{
             console.log("error")
@@ -42,7 +43,7 @@ const placeShip=()=>{
     if(player.gameboard.ships.length===9){
         generateGameBoard("AI")
         generateAI()
-       
+        battleLoop()
         stop=true
     } 
     

@@ -8,16 +8,17 @@ class Ship{
         this.position=position
         this.coordinates=[]
         }
-    hit(){
+    hit(coordX,coordY){
         this.hits.push({
-            coordinateX:this.coordinateX,
-            coordinateY:this.coordinateY
+            coordinateX:coordX,
+            coordinateY:coordY
         })
         return this.hits.length
     }
     isSunk(){
-        if(this.length-this.hits.length===0){
+        if(this.length-this.hits.length==0){
             this.killed=true
+            console.log("killed")
             return true
         }
         else return false

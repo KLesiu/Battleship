@@ -102,10 +102,11 @@ ship.coordinates.push({x:coordinateX,y:coordinateY},{x:coordinateX,y:coordinateY
             let current=this.ships[i].coordinates
             for(let j=0;j<current.length;j++){
                 if(current[j].x===coordinateX&&current[j].y===coordinateY){
-                    this.ships[i].hit()
+                    this.ships[i].hit(coordinateX,coordinateY)
                     if(this.ships[i].isSunk()){
                     
                                 this.sunkedShips++
+                                console.log(this.sunkedShips)
                                return this.endGame()
                             } 
                             return this.ships[i].hits
@@ -124,7 +125,7 @@ ship.coordinates.push({x:coordinateX,y:coordinateY},{x:coordinateX,y:coordinateY
         return missedAttack
     }
     endGame(){
-        if(this.sunkedShips===this.ships.length) return true
+        if(this.sunkedShips===this.ships.length) console.log("finish")
         return false
 
     }

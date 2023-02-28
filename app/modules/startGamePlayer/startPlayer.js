@@ -31,7 +31,9 @@ const generateGameBoard=(user)=>{
         let counter=0
         for(let i=0;i<100;i++){
             const div=document.createElement("div")
-            div.classList.add("gameBoardDiv")
+            if(user==='player') div.classList.add("gameBoardDiv")
+            else if(user==='AI') div.classList.add("gameBoardDivAI")
+            
             if(i<10){
                 div.innerHTML=counter
                 counter++

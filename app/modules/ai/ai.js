@@ -9,16 +9,16 @@ class AI{
         
     }
     init(){
-        for(let i=this.counter;i<10;i++){
-            if(this.counter===9)return this.gameboard
+        for(let i=this.counter;this.gameboard.ships.length<10;i++){
+            if(this.gameboard.ships.length==9)return this.gameboard
             let cordX=Math.floor(Math.random()*9)
             let cordY=Math.floor(Math.random()*9)
             let position=Math.floor(Math.random()*3)
             let lengthShip=Math.floor(Math.random()*2+1)
             if(position<2) position='horizontal'
             else if(position>=2) position='vertical'
-            if(this.counter<2)this.createLongShip(cordX,cordY,position)
-            else if(this.counter>=2&&this.counter<5) this.createMediumShip(cordX,cordY,position)
+            if(this.gameboard.ships.length<2)this.createLongShip(cordX,cordY,position)
+            else if(this.gameboard.ships.length>=2&&this.gameboard.ships.length<5) this.createMediumShip(cordX,cordY,position)
             else   this.createSmallShip(cordX,cordY,position)
             console.log(this.counter)
            this.counter++
