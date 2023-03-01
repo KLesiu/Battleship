@@ -37,9 +37,18 @@ class AI{
     shoot(){
     let cordX=Math.floor(Math.random()*9)
     let cordY=Math.floor(Math.random()*9)
-    this.shoots.push({x:cordX,y:cordY})
-    let coordinates=[cordX,cordY]
-    return coordinates
+    if(this.shoots.includes(`${cordX}${cordY}`)){
+        console.log('powtórka')
+        this.shoot()
+    } 
+    else{
+        this.shoots.push(`${cordX}${cordY}`)
+        console.log(this.shoots)
+        let coordinates=[cordX,cordY]
+        console.log(coordinates)
+        return coordinates
+    }
+    
 
     }
     
