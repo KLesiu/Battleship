@@ -20,7 +20,6 @@ class AI{
             if(this.gameboard.ships.length<2)this.createLongShip(cordX,cordY,position)
             else if(this.gameboard.ships.length>=2&&this.gameboard.ships.length<5) this.createMediumShip(cordX,cordY,position)
             else   this.createSmallShip(cordX,cordY,position)
-            console.log(this.counter)
            this.counter++
         }
        
@@ -39,7 +38,8 @@ class AI{
     let cordX=Math.floor(Math.random()*9)
     let cordY=Math.floor(Math.random()*9)
     this.shoots.push({x:cordX,y:cordY})
-    return {x:cordX,y:cordY}
+    let coordinates=[cordX,cordY]
+    return coordinates
 
     }
     
