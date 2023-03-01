@@ -1,5 +1,6 @@
 import {Ship} from "../ship/ship.js"
 import { player } from "../startGamePlayer/startPlayer.js"
+
 let stop=false
 class Gameboard{
     constructor(){
@@ -117,10 +118,9 @@ ship.coordinates.push({x:coordinateX,y:coordinateY},{x:coordinateX,y:coordinateY
                 
             
         }
-        let missedAttack={
-            coordinateX:coordinateX,
-            coordinateY:coordinateY
-        }
+        let missedAttack;
+        if(coordinateY==0) missedAttack=+coordinateX
+        else missedAttack=(10*+coordinateY)+coordinateX
         this.hitsMissed.push(missedAttack)
         return missedAttack
     }
@@ -132,6 +132,7 @@ ship.coordinates.push({x:coordinateX,y:coordinateY},{x:coordinateX,y:coordinateY
 
     
 }
+
 
 
 export {Gameboard}

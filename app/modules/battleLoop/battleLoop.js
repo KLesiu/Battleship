@@ -1,6 +1,5 @@
 import { ai } from "../generateAI/generateAI.js";
 import { player } from "../startGamePlayer/startPlayer.js";
-
 const battleLoop=()=>{
     const aiGameBoardDivs=document.querySelectorAll(".gameBoardDivAI")
     const playerGameBoardDivs=document.querySelectorAll(".gameBoardDiv")
@@ -23,9 +22,11 @@ const battleLoop=()=>{
                     coordinatesX=number
                     coordinatesY=0
                 }
-                
-                console.log(ai.gameboard.receiveAttack(+coordinatesX,+coordinatesY))
-                
+               ai.gameboard.receiveAttack(+coordinatesX,+coordinatesY)
+                console.log(ai.gameboard.hitsMissed)
+                aiGameBoardDivs[+number].style="background-color:green"
+                showMissedShoot('AI')
+               
                 aiShoot()
             })
         }
@@ -34,16 +35,22 @@ const battleLoop=()=>{
         );
     
    const aiShoot=()=>{
-    console.log(ai.shoot())
+    // console.log(ai.shoot())
     
+   }
+   const showMissedShoot=(player)=>{
+    if(player==='AI'){
+        let array=ai.gameboard.hitsMissed
+        for(let i=0;i<array.length;i++){
+            aiGameBoardDivs[array[i]].innerHTML='x'
+            aiGameBoardDivs[array[i]].style="background-color:blue"
+        }
+    }
    }
       
         
     
     
 }
-const playerAttack=(element)=>{
-   
 
-}
 export {battleLoop}
