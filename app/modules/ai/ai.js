@@ -1,4 +1,5 @@
 import {Gameboard} from '../gameboard/gameboard.js'
+
 class AI{
     constructor(){
         this.name='AI'
@@ -6,6 +7,7 @@ class AI{
         this.shoots=[]
         this.score=this.gameboard.sunkedShips
         this.counter=0
+        
         
     }
     init(){
@@ -34,23 +36,7 @@ class AI{
     createSmallShip(cordX,cordY,position){
         this.gameboard.addShip(cordX,cordY,1,position)
     }
-    shoot(){
-    let cordX=Math.floor(Math.random()*9)
-    let cordY=Math.floor(Math.random()*9)
-    if(this.shoots.includes(`${cordX}${cordY}`)){
-        console.log('powtórka')
-        this.shoot()
-    } 
-    else{
-        this.shoots.push(`${cordX}${cordY}`)
-        console.log(this.shoots)
-        let coordinates=[cordX,cordY]
-        console.log(coordinates)
-        return coordinates
-    }
-    
-
-    }
+   
     
 }
 

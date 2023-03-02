@@ -1,10 +1,13 @@
 import { ai } from "../generateAI/generateAI.js";
 import { player } from "../startGamePlayer/startPlayer.js";
+import { coordinatesArray } from '../coordinates/coordinates.js'
+import { arrayCheck } from '../coordinates/coordinates.js'
 const battleLoop=()=>{
     const aiGameBoardDivs=document.querySelectorAll(".gameBoardDivAI")
     const playerGameBoardDivs=document.querySelectorAll(".gameBoardDiv")
     const aiGameBoardDivsArray=Array.from(aiGameBoardDivs)
     let holderNumbers=[]
+    
         aiGameBoardDivsArray.forEach(element => {
             element.addEventListener("click",()=>{
                 
@@ -26,7 +29,8 @@ const battleLoop=()=>{
                     }
                     holderNumbers.push(+number)
                    ai.gameboard.receiveAttack(+coordinatesX,+coordinatesY)
-                    console.log(ai.gameboard.hitsMissed)
+                    
+                    
                     aiGameBoardDivs[+number].style="background-color:green"
                     showMissedShoot('AI')
                    
@@ -42,18 +46,39 @@ const battleLoop=()=>{
         );
     
    const aiShoot=()=>{
-    let arr=ai.shoot()
-    let coordinatesX=arr[0]
-    let coordinatesY=arr[1]
-    let number=0
-    if(coordinatesY==0) number=coordinatesX
-    else number=(10*coordinatesY)+coordinatesX
+    let numberA=+Math.floor(Math.random()*100)
+        let cordX=coordinatesArray[numberA].x
+        let cordY=coordinatesArray[numberA].y
+        
+       
+       
+            if(arrayCheck.length>0){
+                while(arrayCheck.includes(+numberA)){
+                    numberA=Math.floor(Math.random()*100)
+                    cordX=coordinatesArray[numberA].x
+                    cordY=coordinatesArray[numberA].y
+                    console.log('powtórka')
+                }
+            }
+            arrayCheck.push(numberA)
+      
+            
+            let number=0
+            if(cordY==0) number=cordX
+            else number=(10*cordY)+cordX
+            
+            player.gameboard.receiveAttack(cordX,cordY)
+           
+            playerGameBoardDivs[number].style="background-color:red"
+            showMissedShoot('player')
+        } 
+        
+       
+        
     
-    player.gameboard.receiveAttack(coordinatesX,coordinatesY)
-    playerGameBoardDivs[number].style="background-color:red"
-    showMissedShoot('player')
+   
     
-   }
+   
    const showMissedShoot=(user)=>{
     if(user==='AI'){
         let array=ai.gameboard.hitsMissed
