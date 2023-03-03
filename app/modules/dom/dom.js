@@ -18,6 +18,16 @@ const buildDom=()=>{
     divSectionPreLoad.appendChild(inputDivSectionPreLoad)
     divSectionPreLoad.appendChild(buttonDivSectionPreLoad)
     sectionPreLoad.appendChild(divSectionPreLoad)
+    const sectionWinner=document.createElement('section')
+    sectionWinner.classList.add('showWinner')
+    sectionWinner.classList.add('hidden')
+    sectionWinner.innerHTML=`<h1 id="winner"></h1>
+    <h2>Player score:</h2>
+    <h2>AI score:</h2>
+    <h2 id="scorePlayerPreLoad"></h2>
+    <h2 id="scoreAIPreLoad"></h2>
+    <button class="playAgain">Play again</button>`
+    sectionPreLoad.appendChild(sectionWinner)
     document.body.appendChild(sectionPreLoad)
     const main=document.createElement("main")
     const sectionPlayerMain=document.createElement("section")

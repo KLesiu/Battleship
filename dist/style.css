@@ -106,7 +106,7 @@
     justify-content: center;
     width: 100vw;
   }
-  .preLoad div {
+  .preLoad div,.showWinner {
     border: 1px solid white;
     align-items: center;
     display: flex;
@@ -139,6 +139,31 @@
   }
   .submitMyName:hover {
     background-color: rgb(20, 75, 148);
+  }
+  .showWinner h1{
+    font-size:40px;
+    text-align: center;
+    width: 100%;
+  }
+  .showWinner h2{
+    text-align: center;
+    width: 50%;
+  }
+  #scorePlayerPreLoad,#scoreAIPreLoad{
+    font-size: 50px;
+    margin-bottom: 20%;
+  }
+  .playAgain{
+    background-color: grey;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 10%;
+    font-size: 15px;
+    width: 20%;
+  }
+  .playAgain:hover{
+    background-color: lightblue;
+    color: black;
   }
   .hidden {
     display: none;

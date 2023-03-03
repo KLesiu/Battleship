@@ -38,7 +38,7 @@ const battleLoop=()=>{
                     const playerScore=document.querySelector('.playerScore')
                     playerScore.innerHTML=ai.gameboard.sunkedShips
                     if(ai.gameboard.sunkedShips===9){
-                        endGame(player.welcome())
+                        endGame(player.welcome(),ai.gameboard.sunkedShips,player.gameboard.sunkedShips)
                         return
                     }
                     aiShoot()
@@ -79,7 +79,7 @@ const battleLoop=()=>{
             aiScore.innerHTML=player.gameboard.sunkedShips
            if(player.gameboard.sunkedShips===9){
             // FIX HIDDEN CLASS BUG
-            endGame('AI')
+            endGame('AI',ai.gameboard.sunkedShips,player.gameboard.sunkedShips)
             return
            }
             playerGameBoardDivs[number].style="background-color:red"
