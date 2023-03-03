@@ -4,12 +4,13 @@ class Player{
         this.shoots=[]
         this.gameboard=new Gameboard
        
-        this.score=this.gameboard.sunkedShips
+        
     }
     welcome(){
         const inputStart=document.querySelector(".preLoad div input")
         const yourName=document.querySelector("#yourName")
         yourName.innerHTML=inputStart.value
+        return inputStart.value
     }
     addShips(coordinateX,coordinateY,lengthShip,position){
         this.gameboard.addShip(coordinateX,coordinateY,lengthShip,position)

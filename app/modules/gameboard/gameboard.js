@@ -1,6 +1,7 @@
 import {Ship} from "../ship/ship.js"
 import { player } from "../startGamePlayer/startPlayer.js"
 
+
 let stop=false
 class Gameboard{
     constructor(){
@@ -107,7 +108,6 @@ ship.coordinates.push({x:coordinateX,y:coordinateY},{x:coordinateX,y:coordinateY
                     if(this.ships[i].isSunk()){
                     
                                 this.sunkedShips++
-                                console.log(this.sunkedShips)
                                return this.endGame()
                             } 
                             return this.ships[i].hits
@@ -125,7 +125,13 @@ ship.coordinates.push({x:coordinateX,y:coordinateY},{x:coordinateX,y:coordinateY
         return missedAttack
     }
     endGame(){
-        if(this.sunkedShips===this.ships.length) console.log("finish")
+        if(this.sunkedShips===this.ships.length){
+            const preLoad=document.querySelector('.preLoad')
+            const main=document.querySelector('main')
+            preLoad.classList.remove('hidden')
+            main.classList.add('hidden')
+            
+        }
         return false
 
     }

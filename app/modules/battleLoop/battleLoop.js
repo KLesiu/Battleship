@@ -2,6 +2,7 @@ import { ai } from "../generateAI/generateAI.js";
 import { player } from "../startGamePlayer/startPlayer.js";
 import { coordinatesArray } from '../coordinates/coordinates.js'
 import { arrayCheck } from '../coordinates/coordinates.js'
+import { endGame } from "../endGame/endGame.js";
 const battleLoop=()=>{
     const aiGameBoardDivs=document.querySelectorAll(".gameBoardDivAI")
     const playerGameBoardDivs=document.querySelectorAll(".gameBoardDiv")
@@ -33,7 +34,13 @@ const battleLoop=()=>{
                     
                     aiGameBoardDivs[+number].style="background-color:green"
                     showMissedShoot('AI')
-                   
+                    
+                    const playerScore=document.querySelector('.playerScore')
+                    playerScore.innerHTML=ai.gameboard.sunkedShips
+                    if(ai.gameboard.sunkedShips===9){
+                        endGame(player.welcome())
+                        return
+                    }
                     aiShoot()
                 }
                 // Add short info to user after clicked on the same gameboard div
@@ -68,7 +75,13 @@ const battleLoop=()=>{
             else number=(10*cordY)+cordX
             
             player.gameboard.receiveAttack(cordX,cordY)
-           
+            const aiScore=document.querySelector('.aiScore')
+            aiScore.innerHTML=player.gameboard.sunkedShips
+           if(player.gameboard.sunkedShips===9){
+            // FIX HIDDEN CLASS BUG
+            endGame('AI')
+            return
+           }
             playerGameBoardDivs[number].style="background-color:red"
             showMissedShoot('player')
         } 
