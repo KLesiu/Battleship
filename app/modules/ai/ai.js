@@ -14,11 +14,11 @@ class AI{
         for(let i=this.counter;this.gameboard.ships.length<10;i++){
             if(this.gameboard.ships.length==9)return this.gameboard
             // CHECK THIS MATH.RANDOM. Propably it will be 10
-            let cordX=Math.floor(Math.random()*9)
-            let cordY=Math.floor(Math.random()*9)
+            let cordX=Math.floor(Math.random()*10)
+            let cordY=Math.floor(Math.random()*10)
             let position=Math.floor(Math.random()*3)
             // Check, Is lengthShip needed?
-            let lengthShip=Math.floor(Math.random()*2+1)
+            // let lengthShip=Math.floor(Math.random()*2+1)
             if(position<2) position='horizontal'
             else if(position>=2) position='vertical'
             if(this.gameboard.ships.length<2)this.createLongShip(cordX,cordY,position)

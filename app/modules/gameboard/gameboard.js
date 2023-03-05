@@ -39,6 +39,24 @@ ship.coordinates.push({x:coordinateX,y:coordinateY},{x:coordinateX,y:coordinateY
                 if(shipCoor[0].x===current[j].x-1 &&shipCoor[0].y===current[j].y-1){
                     return 'This coordinates are use'
                 }
+                if(shipCoor[0].x===current[j].x+1&&shipCoor[0].y===current[j].y-1){
+                    return 'This coordinates are use'
+                }
+                if(shipCoor[0].x===current[j].x-1&&shipCoor[0].y===current[j].y+1){
+                    return 'This coordinates are use'
+                }
+                if(shipCoor[0].x===current[j].x&&shipCoor[0].y===current[j].y+1){
+                    return 'This coordinates are use'
+                }
+                if(shipCoor[0].x===current[j].x&&shipCoor[0].y===current[j].y-1){
+                    return 'This coordinates are use'
+                }
+                if(shipCoor[0].x===current[j].x-1&&shipCoor[0].y===current[j].y){
+                    return 'This coordinates are use'
+                }
+                if(shipCoor[0].x===current[j].x+1&&shipCoor[0].y===current[j].y){
+                    return 'This coordinates are use'
+                }
                 if(ship.length>1){
                     if(shipCoor[1].x===current[j].x &&shipCoor[1].y===current[j].y){
                         return 'This coordinates are use'
@@ -49,6 +67,25 @@ ship.coordinates.push({x:coordinateX,y:coordinateY},{x:coordinateX,y:coordinateY
                     if(shipCoor[1].x===current[j].x-1 &&shipCoor[1].y===current[j].y-1){
                         return 'This coordinates are use'
                     }
+                    if(shipCoor[1].x===current[j].x-1 &&shipCoor[1].y===current[j].y+1){
+                        return 'This coordinates are use'
+                    }
+                    if(shipCoor[1].x===current[j].x+1 &&shipCoor[1].y===current[j].y-1){
+                        return 'This coordinates are use'
+                    }
+                    if(shipCoor[1].x===current[j].x &&shipCoor[1].y===current[j].y+1){
+                        return 'This coordinates are use'
+                    }
+                    if(shipCoor[1].x===current[j].x &&shipCoor[1].y===current[j].y-1){
+                        return 'This coordinates are use'
+                    }
+                    if(shipCoor[1].x===current[j].x-1 &&shipCoor[1].y===current[j].y){
+                        return 'This coordinates are use'
+                    }
+                    if(shipCoor[1].x===current[j].x+1 &&shipCoor[1].y===current[j].y){
+                        return 'This coordinates are use'
+                    }
+                    
 
                 }
                 if(ship.length>2){
@@ -59,6 +96,24 @@ ship.coordinates.push({x:coordinateX,y:coordinateY},{x:coordinateX,y:coordinateY
                         return 'This coordinates are use'
                     }
                     if(shipCoor[2].x===current[j].x-1 &&shipCoor[2].y===current[j].y-1){
+                        return 'This coordinates are use'
+                    }
+                    if(shipCoor[2].x===current[j].x-1 &&shipCoor[2].y===current[j].y+1){
+                        return 'This coordinates are use'
+                    }
+                    if(shipCoor[2].x===current[j].x+1 &&shipCoor[2].y===current[j].y-1){
+                        return 'This coordinates are use'
+                    }
+                    if(shipCoor[2].x===current[j].x &&shipCoor[2].y===current[j].y-1){
+                        return 'This coordinates are use'
+                    }
+                    if(shipCoor[2].x===current[j].x &&shipCoor[2].y===current[j].y+1){
+                        return 'This coordinates are use'
+                    }
+                    if(shipCoor[2].x===current[j].x+1 &&shipCoor[2].y===current[j].y){
+                        return 'This coordinates are use'
+                    }
+                    if(shipCoor[2].x===current[j].x-1 &&shipCoor[2].y===current[j].y){
                         return 'This coordinates are use'
                     }
                 }

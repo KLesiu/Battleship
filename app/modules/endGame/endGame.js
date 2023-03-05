@@ -7,7 +7,7 @@ const endGame=(whoIsWinner,playerScore,AIScore)=>{
     const winner=document.querySelector('#winner')
     const scorePlayer=document.querySelector('#scorePlayerPreLoad')
     const scoreAI=document.querySelector('#scoreAIPreLoad')
-    winner.innerHTML=whoIsWinner
+    winner.innerHTML=`${whoIsWinner} win!`
     scorePlayer.innerHTML=playerScore
     scoreAI.innerHTML=AIScore
 
