@@ -25,9 +25,7 @@
     padding: 10px;
     width: 100vw;
   }
-  #yourName {
-    font-size: 1em;
-  }
+  
   #player,
   #ai {
     align-items: center;
@@ -37,7 +35,7 @@
     width: 50vw;
   }
   .div-input {
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     height: 20%;
     flex-wrap: wrap;
@@ -52,7 +50,7 @@
   .div-input input {
     color: black;
     height: 5vh;
-    width: 5vw;
+    width: 10%;
   }
   .div-input button {
     background-color: grey;
@@ -90,12 +88,17 @@
   
     width: 10%;
   }
+  #divHolder div{
+    cursor: auto;
+  }
   #ai h2 {
     font-size: 2em;
+    height: 20%;
   }
   #ai span,
   #player span {
-    font-size: 1.3em;
+    
+    font-size: 22px;
     text-align: center;
     width: 100%;
   }
@@ -165,7 +168,71 @@
     background-color: lightblue;
     color: black;
   }
+  .scoreHolder{
+    display:flex;
+    font-size: 20px;
+    justify-content: space-around;
+    text-align: center;
+  }
+  .warning{
+   color: rgb(106, 4, 4);
+  }
+  
+  
+
+
+  @media only screen and (max-width:800px){
+    .preLoad div{
+      width: 90%;
+    }
+    .submitMyName{
+      width: 30vw;
+    }
+    main{
+    display: flex;
+    height: auto;
+    justify-content: center;
+    padding: 10px;
+    width: 100vw;
+    flex-wrap: wrap;
+    }
+    .div-input button {
+      background-color: grey;
+      cursor: pointer;
+      height: 5vh;
+      width: 18vw;
+  }
+  #player, #ai {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100vw;
+}
+#gameBoardPlayer, #gameBoardAI {
+  background-color: white;
+  height: 41vh;
+  margin-top: 5vh;
+  width: 90vw;
+}
+.scoreHolder {
+  display: flex;
+  font-size: 20px;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 100px;
+}
+body{
+  height: 100%;
+}
+#ai{
+  margin-top: 30%;
+}
+.showWinner{
+  width: 90%;
+}
+  }
+
   .hidden {
     display: none;
   }
-  

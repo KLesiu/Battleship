@@ -13,17 +13,29 @@ class AI{
     init(){
         for(let i=this.counter;this.gameboard.ships.length<10;i++){
             if(this.gameboard.ships.length==9)return this.gameboard
-            // CHECK THIS MATH.RANDOM. Propably it will be 10
-            let cordX=Math.floor(Math.random()*10)
-            let cordY=Math.floor(Math.random()*10)
+            
+            let cordX=Math.floor(Math.random()*9)
+            let cordY=Math.floor(Math.random()*9)
             let position=Math.floor(Math.random()*3)
-            // Check, Is lengthShip needed?
-            // let lengthShip=Math.floor(Math.random()*2+1)
+          
             if(position<2) position='horizontal'
             else if(position>=2) position='vertical'
-            if(this.gameboard.ships.length<2)this.createLongShip(cordX,cordY,position)
-            else if(this.gameboard.ships.length>=2&&this.gameboard.ships.length<5) this.createMediumShip(cordX,cordY,position)
-            else   this.createSmallShip(cordX,cordY,position)
+           
+            
+            if(this.gameboard.ships.length<2){
+               if(cordX<8&&position==='horizontal') this.createLongShip(cordX,cordY,position)
+               else if(cordY<8&&position==='vertical') this.createLongShip(cordX,cordY,position)
+               else continue  
+            } 
+            
+            
+            else if(this.gameboard.ships.length>=2&&this.gameboard.ships.length<5){
+                if(cordX<9&&position==='horizontal') this.createMediumShip(cordX,cordY,position)
+                else if(cordY<9&&position==='vertical') this.createMediumShip(cordX,cordY,position)
+                else continue
+            } 
+            
+            else this.createSmallShip(cordX,cordY,position)
            this.counter++
         }
        

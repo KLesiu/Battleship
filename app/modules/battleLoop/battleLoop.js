@@ -44,7 +44,13 @@ const battleLoop=()=>{
                     aiShoot()
                 }
                 // Add short info to user after clicked on the same gameboard div
-                else console.log("było")
+                else {
+                    const info=document.querySelector('.div-input')
+                    
+                    info.innerHTML=`<h2>${player.welcome()} GameBoard</h2><br/>
+                    <span class="warning" style="font-size:1em">You cant shoot two times in the same place</span>`
+                    window.scrollTo(0,0)
+                }
                
             })
         }
@@ -64,7 +70,6 @@ const battleLoop=()=>{
                     numberA=Math.floor(Math.random()*100)
                     cordX=coordinatesArray[numberA].x
                     cordY=coordinatesArray[numberA].y
-                    console.log('powtórka')
                 }
             }
             arrayCheck.push(numberA)
@@ -76,9 +81,8 @@ const battleLoop=()=>{
             
             player.gameboard.receiveAttack(cordX,cordY)
             const aiScore=document.querySelector('.aiScore')
-            aiScore.innerHTML=player.gameboard.sunkedShips
+            aiScore.innerHTML=`AI <br/>${player.gameboard.sunkedShips}`
            if(player.gameboard.sunkedShips===9){
-            // FIX HIDDEN CLASS BUG
             endGame('AI',ai.gameboard.sunkedShips,player.gameboard.sunkedShips)
             return
            }

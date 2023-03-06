@@ -6,7 +6,6 @@ const generateAI=()=>{
     setTimeout(()=>{
         
         ai.init()
-        console.log(ai)
     },200)
     
 }

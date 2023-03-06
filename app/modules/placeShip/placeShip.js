@@ -27,7 +27,9 @@ const placeShip=()=>{
 
 
     if(coordinateX===""||coordinateY===""
-    ||position==="")console.log("type correct properties")
+    ||position===""){
+        return
+    }
     else if(coordinateX>=0&&coordinateX<10&&coordinateY>=0&&coordinateY<10){
         if(position==="vertical"||position==="horizontal"){
             
@@ -36,13 +38,17 @@ const placeShip=()=>{
            if(player.gameboard.ships.length>=5)shipWidth.innerHTML="small ship"
            
         }
-        else{
-            console.log("error")
-        }
+        else return
     }
     if(player.gameboard.ships.length===9){
         generateGameBoard("AI")
         generateAI()
+        const playerGameboard=document.querySelector('#gameBoardPlayer')
+        playerGameboard.style="opacity:0.7"
+        const playerInfoDiv=document.querySelector('.div-input')
+        playerInfoDiv.innerHTML=`<h2>${player.welcome()} GameBoard</h2>`
+        playerInfoDiv.style="font-size:20px"
+        window.scrollTo(0,1500)
         battleLoop()
         stop=true
     } 

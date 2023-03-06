@@ -1,6 +1,8 @@
 import {Ship} from "../ship/ship.js"
 import { player } from "../startGamePlayer/startPlayer.js"
-
+import { divs } from "../../index.js"
+import { preLoad } from "../../index.js"
+import { main } from "../../index.js"
 
 let stop=false
 class Gameboard{
@@ -128,7 +130,6 @@ ship.coordinates.push({x:coordinateX,y:coordinateY},{x:coordinateX,y:coordinateY
 
         this.ships.push(ship)
         if(stop===true) return 
-        const divs=document.getElementsByClassName("gameBoardDiv")
         
             let positionMid;
             if(coordinateY===0) positionMid=coordinateX
@@ -181,8 +182,7 @@ ship.coordinates.push({x:coordinateX,y:coordinateY},{x:coordinateX,y:coordinateY
     }
     endGame(){
         if(this.sunkedShips===this.ships.length){
-            const preLoad=document.querySelector('.preLoad')
-            const main=document.querySelector('main')
+            
             preLoad.classList.remove('hidden')
             main.classList.add('hidden')
             

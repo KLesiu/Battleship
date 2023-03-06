@@ -13,7 +13,6 @@ const startGamePlayer=()=>{
             document.querySelector(".preLoad").classList.add("hidden")
             document.querySelector("main").classList.remove("hidden")
             generateGameBoard("player")
-            console.log(player)
         }
         
     })

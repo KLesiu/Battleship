@@ -18,7 +18,6 @@ class Ship{
     isSunk(){
         if(this.length-this.hits.length==0){
             this.killed=true
-            console.log("killed")
             return true
         }
         else return false

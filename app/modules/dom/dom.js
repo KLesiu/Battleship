@@ -34,16 +34,16 @@ const buildDom=()=>{
     sectionPlayerMain.id="player"
     const divSectionPlayerMain=document.createElement("div")
     divSectionPlayerMain.classList.add("div-input")
-    divSectionPlayerMain.innerHTML=`<span><h2 id="yourName">Name</h2></span>
+    divSectionPlayerMain.innerHTML=`
     <span><h3 class="infoPlayer">Type coordinates for<h4 class="shipWidth">big ship</h4></h3></span>
     <h3 class="coordXInfo">X</h3>
-    <input id="coordinateX" type="number" />
+    <input id="coordinateX" type="number" min="0" max="9" />
     <h3 class="coordYInfo">Y</h3>
-    <input id="coordinateY" type="number" />
-    <h4 class="positionInfoPlayer" style="width:70%;text-align:center;">Position(vertical,horizontal)</h4>
+    <input id="coordinateY" type="number" min="0" max="9" />
+    <h4 class="positionInfoPlayer" style="width:100%;text-align:center;">Position(vertical,horizontal)</h4>
     <input style="width:30%;" id="position" type="text" />
     <button id="placeShip">Place ship</button>
-    <span>Score:<h2 class="playerScore">0</h2></span>`
+    `
     sectionPlayerMain.appendChild(divSectionPlayerMain)
     const divGameBoardSectionPlayerMain=document.createElement("div")
     divGameBoardSectionPlayerMain.id="gameBoardPlayer"
@@ -56,10 +56,8 @@ const buildDom=()=>{
     sectionAIMain.id="ai"
     const h2SectionAIMain=document.createElement("h2")
     h2SectionAIMain.innerText="AI GameBoard"
-    const spanSectionAIMain=document.createElement("span")
-    spanSectionAIMain.innerHTML=`Score:<h2 class="aiScore">0</h2></span>`
+   
     sectionAIMain.appendChild(h2SectionAIMain)
-    sectionAIMain.appendChild(spanSectionAIMain)
     const divGameBoardSectionAIMain=document.createElement("div")
     divGameBoardSectionAIMain.id="gameBoardAI"
     const divGameBoardHolderSectionAIMain=document.createElement("div")
@@ -68,7 +66,12 @@ const buildDom=()=>{
     sectionAIMain.appendChild(divGameBoardSectionAIMain)
     main.appendChild(sectionAIMain)
     main.classList.add("hidden")
-    // sectionPreLoad.classList.add("hidden")
+    const sectionScore=document.createElement('section')
+    sectionScore.innerHTML=`<div class='scoreHolder'>
+    <span><span><h2 id="yourName">YourName</h2></span><h2 class="playerScore">0</h2></span>
+    <h2 class="aiScore"><span>AI</span><br/>0</h2></span>`
+    sectionScore.style=`width:100vw;height:10vh`
     document.body.appendChild(main)
+    document.body.appendChild(sectionScore)
 }
 export{buildDom}
